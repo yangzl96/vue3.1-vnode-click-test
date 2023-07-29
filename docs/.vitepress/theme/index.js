@@ -4,7 +4,8 @@ import { h } from "vue";
 // import Layout from './Layout.vue'
 import "./style.css";
 
-import JinkeUI from "Jinke-ui";
+// import JinkeUI from "Jinke-ui";
+import JinkeUI from "../../../components";
 import * as icons from "@ant-design/icons-vue";
 import Demo from "vitepress-theme-demoblock/dist/client/components/Demo.vue";
 import DemoBlock from "vitepress-theme-demoblock/dist/client/components/DemoBlock.vue";

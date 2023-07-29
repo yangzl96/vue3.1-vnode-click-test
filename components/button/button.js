@@ -3,29 +3,23 @@ import "./index.less";
 
 export default defineComponent({
   name: "JinkeButton",
-  props: {
-    type: {
-      type: String,
-    },
-    rounded: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  slots: ["icon"],
-  setup(props, { attrs, slots, emit }) {
-    const icon = slots.icon?.();
+  props: {},
+  setup(props, { attrs, slots, emit, expose }) {
     return () =>
       h(
         "button",
         {
+          onClick: (e) => {
+            console.log('trigger');
+            emit('testClick', e)
+          },
           class: {
             "jinke-button": true,
-            [`jinke-button-${props.type}`]: props.type,
-            "jinke-button-rounded": props.rounded,
           },
         },
-        [h("span", null, icon), h("span", null, slots.default())]
+        [
+          h("span", null, slots.default()),
+        ]
       );
   },
 });
